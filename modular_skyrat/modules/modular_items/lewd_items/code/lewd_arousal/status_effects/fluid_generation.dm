@@ -28,7 +28,7 @@
 		return FALSE
 
 	if(affected_human.arousal > AROUSAL_LOW)
-		var/regen = (affected_human.arousal / AROUSAL_MULTIPLIER) * (vagina.internal_fluid_maximum / VAGINA_MULTIPLIER) * BASE_MULTIPLIER
+		var/regen = (affected_human.arousal / AROUSAL_MULTIPLIER) * (vagina.internal_fluid_maximum / VAGINA_MULTIPLIER) * BASE_MULTIPLIER * vagina.production_quirk_modifier
 		vagina.adjust_internal_fluid(regen)
 	else
 		vagina.adjust_internal_fluid(VAGINA_FLUID_REMOVAL_AMOUNT)
@@ -45,8 +45,8 @@
 	if(!testes || (affected_human.arousal < AROUSAL_LOW))
 		return FALSE
 
-	var/regen = (affected_human.arousal / AROUSAL_MULTIPLIER) * (testes.internal_fluid_maximum / TESTES_MULTIPLIER) * BASE_MULTIPLIER
-	testes.internal_fluid_count += regen
+	var/regen = (affected_human.arousal / AROUSAL_MULTIPLIER) * (testes.internal_fluid_maximum / TESTES_MULTIPLIER) * BASE_MULTIPLIER * testes.production_quirk_modifier
+	testes.adjust_internal_fluid(regen)
 
 /datum/status_effect/body_fluid_regen/breasts
 	id = " breast milk regen"
@@ -60,8 +60,10 @@
 	if(!breasts || !breasts.lactates)
 		return FALSE
 
-	var/regen = ((owner.nutrition / (NUTRITION_LEVEL_WELL_FED / NUTRITION_MULTIPLIER)) / NUTRITION_MULTIPLIER) * (breasts.internal_fluid_maximum / BREASTS_MULTIPLIER) * BASE_MULTIPLIER
+	var/regen = ((owner.nutrition / (NUTRITION_LEVEL_WELL_FED / NUTRITION_MULTIPLIER)) / NUTRITION_MULTIPLIER) * (breasts.internal_fluid_maximum / BREASTS_MULTIPLIER) * BASE_MULTIPLIER * breasts.production_quirk_modifier
 	if(!breasts.internal_fluid_full())
+		if((regen / NUTRITION_COST_MULTIPLIER) > owner.nutrition)
+			regen = owner.nutrition * NUTRITION_COST_MULTIPLIER
 		owner.adjust_nutrition(-regen / NUTRITION_COST_MULTIPLIER)
 		breasts.adjust_internal_fluid(regen)
 

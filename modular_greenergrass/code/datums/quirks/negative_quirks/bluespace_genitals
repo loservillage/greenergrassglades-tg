@@ -1,15 +1,15 @@
 #define CUMPLUS_MULT_GLOBAL 1.75
-#define CUMPLUS_MULT_TESTI 2
-#define CUMPLUS_MULT_VAGI 2
-#define CUMPLUS_MULT_BOOBI 2
+#define CUMPLUS_MULT_TESTI 200
+#define CUMPLUS_MULT_VAGI 2000
+#define CUMPLUS_MULT_BOOBI 500
 
-/datum/quirk/cum_plus
-	name = "Extra-productive genitals"
-	desc = "Your genitals can hold twice the amount of fluid expected for their size, and produce slightly faster."
-	value = 0
-	gain_text = span_purple("You feel pressure in your groin.")
-	lose_text = span_purple("You feel a weight lifted from your groin.")
-	medical_record_text = "Patient exhibits increased production of sexual fluids."
+/datum/quirk/bluespacegenitals
+	name = "Bluespace genitals"
+	desc = "Your genitals can hold and generate an extreme amount of fluids."
+	value = -2
+	gain_text = span_purple("You feel an extreme pressure in your lewd bits.")
+	lose_text = span_purple("The extreme pressure in your lewd bits subsides.")
+	medical_record_text = "Patient exhibits drastic increase in fluid storage."
 	icon = FA_ICON_HEART_CIRCLE_PLUS
 	erp_quirk = TRUE
 
@@ -17,7 +17,7 @@
 // Production scales based on size and mob arousal
 
 // Increase fluids
-/datum/quirk/cum_plus/add(client/client_source)
+/datum/quirk/bluespacegenitals/add(client/client_source)
 	// Define quirk mob
 	var/mob/living/carbon/human/quirk_mob = quirk_holder
 
@@ -41,7 +41,7 @@
 		mob_boobi.internal_fluid_maximum *= CUMPLUS_MULT_BOOBI
 
 // Reduce fluids
-/datum/quirk/cum_plus/remove()
+/datum/quirk/bluespacegenitals/remove()
 	// Define quirk mob
 	var/mob/living/carbon/human/quirk_mob = quirk_holder
 
