@@ -52,11 +52,11 @@
 #define CREWSET_POINT_THRESHOLD 1
 #define GHOSTSET_POINT_THRESHOLD 1
 
-#define MUNDANE_MIN_POP 0
-#define MODERATE_MIN_POP 0
-#define MAJOR_MIN_POP 20
-#define CREWSET_MIN_POP 0
-#define GHOSTSET_MIN_POP 0
+#define MUNDANE_MIN_POP 50
+#define MODERATE_MIN_POP 50
+#define MAJOR_MIN_POP 50
+#define CREWSET_MIN_POP 50
+#define GHOSTSET_MIN_POP 50
 
 /// Defines for how much pop do we need to stop applying a pop scalling penalty to event frequency.
 #define MUNDANE_POP_SCALE_THRESHOLD 25
