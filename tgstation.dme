@@ -10199,4 +10199,7 @@
 #include "modular_zzplurt\code\modules\vending\multisec.dm"
 #include "modular_zzplurt\code\modules\vending\vending.dm"
 #include "modular_zzplurt\code\modules\wiremod\core\integrated_circuit.dm"
+
+#include "modular_greenergrass\code\datums\quirks\negative_quirks\hyper_production"
+#include "modular_greenergrass\code\datums\quirks\negative_quirks\bluespace_genitals"
 // END_INCLUDE
