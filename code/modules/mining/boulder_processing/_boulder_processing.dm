@@ -414,9 +414,9 @@
 	//Reset durability to little random lower value cause we have crushed it so many times
 	var/size = specific_boulder.boulder_size
 	if(size == BOULDER_SIZE_SMALL)
-		specific_boulder.durability = rand(2, BOULDER_SIZE_SMALL - 1)
+		specific_boulder.durability = 2
 	else
-		specific_boulder.durability = rand(BOULDER_SIZE_SMALL, size - 1)
+		specific_boulder.durability = 2
 	specific_boulder.processed_by = src //so we don't take in the boulder again after we just ejected it
 	specific_boulder.forceMove(drop_location())
 	specific_boulder.processed_by = null //now since move is done we can safely clear the reference

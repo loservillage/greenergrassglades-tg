@@ -1,10 +1,10 @@
 // Defines related to the mining rework circa June 2023
 /// Durability of a large size boulder from a large size vent.
-#define BOULDER_SIZE_LARGE 15
+#define BOULDER_SIZE_LARGE 2
 /// Durability of a medium size boulder from a medium size vent.
-#define BOULDER_SIZE_MEDIUM 10
+#define BOULDER_SIZE_MEDIUM 2
 /// Durability of a small size boulder from a small size vent.
-#define BOULDER_SIZE_SMALL 5
+#define BOULDER_SIZE_SMALL 2
 /// How many boulders can a single ore vent have on its tile before it stops producing more?
 #define MAX_BOULDERS_PER_VENT 10
 /// Time multiplier
